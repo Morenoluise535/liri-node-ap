@@ -1,8 +1,6 @@
 var keys = require('./keys.js');
 var request = require('request');
-var twitter = require('twitter');
 var spotify = require('spotify');
-var client = new twitter(keys.twitterKeys);
 var fs = require('fs');
 
 //Stored argument's array
@@ -48,22 +46,6 @@ switch(command){
   default:
     console.log("{Please enter a command: my-tweets, spotify-this-song, movie-this, do-what-it-says}");
   break;
-}
-
-function showTweets(){
-  //Display last 20 Tweets
-  var screenName = {screen_name: ''};
-  client.get('statuses/user_timeline', screenName, function(error, tweets, response){
-    if(!error){
-      for(var i = 0; i<tweets.length; i++){
-        var date = tweets[i].created_at;
-        console.log("@: " + tweets[i].text + " Created At: " + date.substring(0, 19));
-     
-      }
-    }else{
-      console.log('Error occurred');
-    }
-  });
 }
 
 function spotifySong(song){
