@@ -19,9 +19,6 @@ for (var i=3; i<nodeArgv.length; i++){
 
 //switch case
 switch(command){
-  case "my-tweets":
-    showTweets();
-  break;
 
   case "spotify-this-song":
     if(x){
@@ -44,7 +41,7 @@ switch(command){
   break;
 
   default:
-    console.log("{Please enter a command: my-tweets, spotify-this-song, movie-this, do-what-it-says}");
+    console.log("{Please enter a command: spotify-this-song, movie-this, do-what-it-says}");
   break;
 }
 
